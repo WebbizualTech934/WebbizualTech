@@ -402,42 +402,44 @@
                     </div>
                     <!-- Contact Fields -->
                     <div class="py-3">
-                        <form class="contact-form w-100">
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-4 mb-md-0">
-                                    <input type="text" class="form-control form-input-custom" id="firstName"
-                                        placeholder="First Name">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control form-input-custom" id="lastName"
-                                        placeholder="Last Name">
-                                </div>
-                            </div>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form w-100">
+    <!-- Hidden input for Netlify to recognize the form -->
+    <input type="hidden" name="form-name" value="contact">
+    <p class="d-none">
+      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </p>
 
-                            <div class="row mb-4">
-                                <div class="col-12">
-                                    <input type="email" class="form-control form-input-custom" id="emailAddress"
-                                        placeholder="Email Address">
-                                </div>
-                            </div>
+    <div class="row mb-4">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <input type="text" class="form-control form-input-custom" name="firstName" id="firstName" placeholder="First Name" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control form-input-custom" name="lastName" id="lastName" placeholder="Last Name" required>
+      </div>
+    </div>
 
-                            <div class="row mb-4">
-                                <div class="col-12">
-                                    <textarea class="form-control form-input-custom textarea-custom" id="message"
-                                        rows="3" placeholder="Message"></textarea>
-                                </div>
-                            </div>
+    <div class="row mb-4">
+      <div class="col-12">
+        <input type="email" class="form-control form-input-custom" name="emailAddress" id="emailAddress" placeholder="Email Address" required>
+      </div>
+    </div>
 
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="let-talk">
-                                        <button class="btn btn-outline-light contact-submit-btn"
-                                            type="button">Submit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+    <div class="row mb-4">
+      <div class="col-12">
+        <textarea class="form-control form-input-custom textarea-custom" name="message" id="message" rows="3" placeholder="Message"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="let-talk">
+          <button class="btn btn-outline-light contact-submit-btn" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
                 </div>
             </div>
 
