@@ -460,11 +460,22 @@
                             Meets strategic thinking</h2>
                     </div>
                     <div class="subsctiption d-flex align-items-center gap-2">
-                        <input type="email" class="form-control form-input-custom" id="subscriptionmail"
-                            placeholder="Email Address">
-                        <div class="let-talk">
-                            <button class="btn btn-outline-light contact-submit-btn" type="button">Subscribe</button>
-                        </div>
+                        <form name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                            class="d-flex align-items-center gap-2 w-100">
+                            <!-- Hidden input for Netlify to identify the form -->
+                            <input type="hidden" name="form-name" value="subscribe">
+                            <p class="d-none">
+                                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                            </p>
+
+                            <input type="email" class="form-control form-input-custom" id="subscriptionmail"
+                                name="email" placeholder="Email Address" required>
+
+                            <div class="let-talk">
+                                <button class="btn btn-outline-light contact-submit-btn"
+                                    type="submit">Subscribe</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
